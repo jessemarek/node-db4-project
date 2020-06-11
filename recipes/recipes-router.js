@@ -18,6 +18,15 @@ router.get('/', (req, res) => {
         })
 })
 
+router.get('/:id', (req, res) => {
+    const { id } = req.params
+
+    Recipes.getRecipeById(id)
+        .then(recipe => {
+            res.status(200).json(recipe)
+        })
+})
+
 //Get a list of ingredients for a specific recipe
 router.get('/:id/shoppinglist', (req, res) => {
     const { id } = req.params
