@@ -1,7 +1,7 @@
 
 exports.up = function (knex) {
     return knex.schema.table('recipe_ingredient', tbl => {
-        tbl.integer('quantity').unsigned()
+        tbl.float('quantity')
     })
 };
 

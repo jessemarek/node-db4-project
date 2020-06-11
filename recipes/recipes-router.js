@@ -18,6 +18,7 @@ router.get('/', (req, res) => {
         })
 })
 
+//Get a recipe by ID that includes the list of ingredients and the recipe instructions
 router.get('/:id', (req, res) => {
     const { id } = req.params
 
