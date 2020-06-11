@@ -30,22 +30,11 @@ async function getRecipeById(id) {
     }
 }
 
-async function getShoppingList(id) {
-    const ingredients = await db('recipe_ingredient as ri')
+function getShoppingList(id) {
+    return db('recipe_ingredient as ri')
         .where('ri.recipe_id', id)
         .join('ingredients as i', 'ri.ingredient_id', '=', 'i.id')
         .select('i.name', 'ri.quantity')
-
-    const recipe = await db('recipes as r')
-        .where('r.id', id)
-        .select('r.name')
-        .first()
-
-    return {
-        id,
-        recipe: recipe.name,
-        ingredients
-    }
 }
 
 function getInstructions(id) {
