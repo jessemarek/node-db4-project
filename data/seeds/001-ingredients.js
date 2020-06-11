@@ -19,6 +19,18 @@ exports.seed = function (knex) {
         },
         {
           name: "baking soda"
+        },
+        {
+          name: "apples"
+        },
+        {
+          name: "yeast"
+        },
+        {
+          name: "chocolate"
+        },
+        {
+          name: "oatmeal"
         }
       ]);
     });
